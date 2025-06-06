@@ -1,0 +1,15 @@
+symbols: ["AAPL", "AMZN", "NVDA", "MSFT", "META", "AMD", "NFLX", "GOOGL", "UBER", "SHOP", "CRWD", "NET", "DDOG", "COIN", "RBLX", "PINS", "ORCL", "CSCO", "INTC"]
+timeframe: "1Min"
+feed: "iex" # free tier
+days_back: 7
+features:
+  raw: ["open", "high", "low", "close", "volume"]
+  derived: ["return_5m", "rsi_14", "candle_body", "volume_spike"]
+encoding:
+  day_of_week: "cyclical"
+  hour_of_day: "cyclical"
+  sector: "onehot"
+labeling:
+  method: "future_return"
+  threshold: 0.002
+  horizon: 15  # minutes

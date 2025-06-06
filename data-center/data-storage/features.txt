@@ -1,0 +1,23 @@
+this is a list of features we want:
+
+| **Raw Alpaca Data**   | **Derived from Raw Data**                      |
+| --------------------- | ---------------------------------------------- |
+| `timestamp`           | `minute_of_day` (sin/cos encoded)              |
+| `open`                | `candle_body = abs(close - open)`              |
+| `high`                | `upper_wick = high - max(open, close)`         |
+| `low`                 | `lower_wick = min(open, close) - low`          |
+| `close`               | `return_1m`, `return_5m`, `return_15m`         |
+|                       | `log_return = log(close / prev_close)`         |
+|                       | `momentum = close_now - close_15m_ago`         |
+|                       | `rolling_mean_15m`, `rolling_std_15m`          |
+|                       | `max_high_15m`, `min_low_15m`                  |
+|                       | `sma_5`, `sma_15`, `ema_5`, `ema_15`           |
+|                       | `rsi_14`, `macd`, `macd_signal`                |
+|                       | `bollinger_upper`, `bollinger_lower`, `atr_14` |
+|                       | `correlation_with_spy` (using other symbols)   |
+|                       | `relative_strength = return / spy_return`      |
+| `volume`              | `volume_change`, `rolling_avg_volume_15m`      |
+|                       | `volume_spike = volume_now / avg_volume`       |
+|                       | `on_balance_volume (OBV)`                      |
+| `vwap` (if available) | `price - vwap`                                 |
+|                       | `vwap_ratio = close / vwap`                    |
