@@ -3,6 +3,7 @@ import yaml
 import pandas as pd
 from alpaca_trade_api.rest import REST
 from datetime import datetime, timedelta
+import yfinance as yf
 from dotenv import load_dotenv
 load_dotenv()
 
